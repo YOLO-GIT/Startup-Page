@@ -2,3 +2,43 @@
 @import "../node_modules/flowbite/src/themes/default.css";
 @plugin "../node_modules/flowbite/plugin.js";
 @source "../node_modules/flowbite/dist/flowbite.js";
+
+@layer components {
+    body::-webkit-scrollbar {
+        display: none;
+    }
+
+    .widget {
+        @apply block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 text-center transition-transform transform duration-300 ease-in-out hover:scale-105;
+    }
+
+    .widget-icon {
+        @apply w-10 h-10 mx-auto mb-2 transition-transform duration-300 group-hover:scale-110;
+    }
+
+    .widget-text {
+        @apply text-2xl font-bold text-gray-900 dark:text-white;
+    }
+}
+
+/* Neon Glow Effect */
+.widget:hover {
+    box-shadow: 0 0 15px var(--tw-shadow-color);
+}
+
+.neon-text {
+    text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff;
+    animation: flicker 1.5s infinite alternate;
+}
+
+@keyframes flicker {
+    0% {
+        opacity: 1;
+        text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff;
+    }
+
+    100% {
+        opacity: 0.8;
+        text-shadow: 0 0 5px #0ff, 0 0 15px #0ff, 0 0 30px #0ff;
+    }
+}
